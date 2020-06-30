@@ -1,0 +1,33 @@
+<template>
+    <div>
+        <h3>
+            Prechat Form
+        </h3>
+
+        <lightning-layout multiple-rows="true">
+            <template for:each={fields} for:item="field">
+                <template if:true={field.isSplitField}>
+                    <lightning-layout-item key={field.name} flexibility="auto" size="6" large-device-size="6" small-device-size="6" medium-device-size="6"  class="slds-p-horizontal_x-small">
+                        <lightning-input name={field.name} label={field.label} value={field.value} max-length={field.maxLength} required={field.required}></lightning-input>
+                    </lightning-layout-item>
+                </template>
+                <template if:false={field.isSplitField}>
+                    <lightning-layout-item key={field.name} flexibility="auto" size="12" class="slds-p-horizontal_x-small">
+                        <lightning-input if:false={field.isPicklist} name={field.name} label={field.label} value={field.value} max-length={field.maxLength} required={field.required}></lightning-input>
+                        <lightning-combobox if:true={field.isPicklist} name={field.name} label={field.label} value={field.value} required={field.required} options={field.picklistOptions} dropdown-alignment="auto"></lightning-combobox>
+                    </lightning-layout-item>
+                </template>
+            </template>
+        </lightning-layout>
+
+        <div class="slds-m-vertical_small"></div>
+
+        <lightning-layout>
+            <lightning-layout-item flexibility="auto" size="12" class="slds-p-horizontal_x-small">
+                <div class="dialogButtonContainer">
+                    <input type="button" value={startChatLabel} onclick={handleStartChat} class="buttonfont embeddedServiceSidebarButton"></input>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
