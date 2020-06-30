@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+.slds-form-element {
+    text-align: left;
+}
+
+.buttonfont.embeddedServiceSidebarButton {
+    font-size: 1rem;
+}
+
+.slds-card {
+    box-shadow: unset;
+    border-bottom: 0px;
+}
