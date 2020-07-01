@@ -10,8 +10,3 @@
 .buttonfont.embeddedServiceSidebarButton {
     font-size: 1rem;
 }
-
-.slds-card {
-    box-shadow: unset;
-    border-bottom: 0px;
-}
